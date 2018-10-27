@@ -1,0 +1,8 @@
+T | true | a
+T | false | b
+T | true | ac
+T | false | pl
+T | false | b
+T | false | VBs laundry
+D | false | submission | tomorrow
+T | false | a
