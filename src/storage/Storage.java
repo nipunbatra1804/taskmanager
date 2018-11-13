@@ -93,7 +93,7 @@ public class Storage {
      * @param tasks List of Task objects to write to file
      * @throws IOException
      */
-    public void write(List<Task> tasks) throws IOException{
+    public void writeTasks(List<Task> tasks) throws IOException{
         FileWriter fw = new FileWriter(_filename);
         for (Task task : tasks) {
             fw.write(task.toFileString());

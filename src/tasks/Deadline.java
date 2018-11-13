@@ -1,14 +1,16 @@
 package tasks;
+import org.json.simple.JSONObject;
 import parser.DateTime;
 
 import java.util.Calendar;
+import java.util.Date;
 
 public class Deadline extends Todo {
 
     /**
      * Instance Variable to store the deadline
      */
-    private Calendar _deadline;
+    private Calendar deadline;
 
     /**
      * Constructor to setup deadline task
@@ -18,7 +20,7 @@ public class Deadline extends Todo {
     public Deadline(String description, Calendar by) {
         super(description);
         this.type = TaskType.DEADLINE;
-        _deadline = by;
+        deadline = by;
     }
 
     /**
@@ -37,7 +39,7 @@ public class Deadline extends Todo {
      * @param by: deadline
      */
     public void setDeadline(Calendar by) {
-        _deadline = by;
+        deadline = by;
     }
 
     /**
@@ -45,7 +47,7 @@ public class Deadline extends Todo {
      * @return jectdeadline as a Calendar ob
      */
     public Calendar getDeadline() {
-        return _deadline;
+        return deadline;
     }
 
     @Override
@@ -57,6 +59,27 @@ public class Deadline extends Todo {
     public String toFileString(){
         return type.name() + " | " + status.name() + " | " + this.description +
                 " | " + DateTime.calendarToString(this.getDeadline());
+    }
+
+    @Override
+    public Date getDueDate(){
+        return deadline.getTime();
+    }
+
+    @Override
+    public JSONObject getJson() {
+        JSONObject jobj = new JSONObject();
+        jobj.put("type",type.name());
+        jobj.put("description",description);
+        jobj.put("status",status.name());
+        jobj.put("deadline",DateTime.calendarToString(this.getDeadline()));
+        jobj.put("priority",priority.name());
+        return jobj;
+    }
+
+    @Override
+    public void setDueDate(Calendar due){
+        deadline = due;
     }
 
 }

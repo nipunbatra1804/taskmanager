@@ -5,12 +5,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.text.ParseException;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class DateTime {
     /**
      * Fixed date format for marking time
      */
-    private static final String DATE_FORMAT = "dd-mm-yyyy,HH:mm";
+    private static final String DATE_FORMAT = "dd-MM-yyyy,HH:mm";
 
     /**
      * convert string to Calendar objects
@@ -20,12 +21,21 @@ public class DateTime {
      */
     public static Calendar stringToCalendar(String datestring) throws InvalidDateException{
         SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
-        try {
-            Date date = sdf.parse(datestring);
-            return dateToCalendar(date);
-        } catch (ParseException e){
-            throw new InvalidDateException("Invalid Date Format. Use\'" + DATE_FORMAT + "\'" + e.getMessage());
+        boolean isValidDate = isValidFormat(DATE_FORMAT,datestring);
+        Date date;
+        if(isValidDate){
+            try {
+                date  = sdf.parse(datestring);
+            } catch (ParseException e) {
+                throw new InvalidDateException("Invalid Date Format");
+            }
+
+        } else {
+            date = NaturalLanguageParser.parseNLDateFromString(datestring);
         }
+
+        return dateToCalendar(date);
+
     }
 
     /**
@@ -44,15 +54,50 @@ public class DateTime {
     }
     //Convert Date to Calendar
     private static Calendar dateToCalendar(Date date) {
-
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         return calendar;
-
     }
 
-    //Convert Calendar to Date
-    private static Date calendarToDate(Calendar calendar) {
-        return calendar.getTime();
+    public static Date getToday() {
+        return Calendar.getInstance().getTime();
     }
+
+    public static int compareDates(Date date1, Date date2) {
+        Date sDate = getZeroTimeDate(date1);
+        Date eDate = getZeroTimeDate(date2);
+        if (sDate.before(eDate)) {
+            return -1;
+        }
+        if (sDate.after(eDate)) {
+            return 1;
+        }
+
+        return 0;
+    }
+    private static Date getZeroTimeDate(Date date) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        date = calendar.getTime();
+        return date;
+    }
+
+    private static boolean isValidFormat(String format, String value) {
+        Date date = null;
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat(format);
+            date = sdf.parse(value);
+            if (!value.equals(sdf.format(date))) {
+                date = null;
+            }
+        } catch (ParseException ex) {
+            //ex.printStackTrace();
+        }
+        return date != null;
+    }
+
 }

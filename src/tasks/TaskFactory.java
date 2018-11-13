@@ -27,4 +27,19 @@ public class TaskFactory {
         }
         return null;
     }
+    public static Task getTask(TaskType type, String description, TaskStatus status, String from, String until) throws TaskManagerException {
+        switch(type){
+            case TIMED:
+                return new Timed(description, DateTime.stringToCalendar(from), DateTime.stringToCalendar(until), status);
+            default:
+                return getTask(type,description,status,until);
+        }
+    }
+
+    public static Task getTask(TaskType type, String description, TaskStatus status, String from, String until, TaskPriority priority) throws TaskManagerException {
+        Task task = getTask(type,description,status,from,until);
+        task.setPriority(priority);
+        return task;
+    }
+
 }

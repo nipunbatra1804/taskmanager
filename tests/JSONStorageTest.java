@@ -2,32 +2,32 @@ import exceptions.TaskManagerException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-import org.junit.BeforeClass;
+import org.junit.Before;
 import parser.DateTime;
+import storage.JSONStorage;
 import storage.Storage;
 import tasklist.TaskList;
-import tasks.Deadline;
-import tasks.Task;
-import tasks.TaskStatus;
-import tasks.Todo;
+import tasks.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
-public class StorageTest {
+public class JSONStorageTest {
 
 
     static TaskList tasks;
     static Storage storage;
-    @BeforeClass
-    public static void testsetup() throws TaskManagerException {
+    @Before
+    public void testsetup() throws TaskManagerException {
         tasks = new TaskList();
         Task todo = new Todo("xyz1");
         Task dead = new Deadline("xyz2", DateTime.stringToCalendar("23-12-2018,11:14"), TaskStatus.OPEN);
+        Task timed = new Timed("xyz3", DateTime.stringToCalendar("23-11-2018,22:11"), DateTime.stringToCalendar("23-11-2018,23:11"),TaskStatus.OPEN);
         tasks.addTask(todo);
         tasks.addTask(dead);
-        storage = new Storage("newStorageFile.txt");
+        tasks.addTask(timed);
+        storage = new JSONStorage("newjson.json");
         //
     }
 
@@ -35,7 +35,7 @@ public class StorageTest {
     public void testWithNull() throws TaskManagerException, FileNotFoundException {
         TaskList nulltasks = new TaskList();
         try {
-            storage.write(nulltasks.getTaskList());
+            storage.writeTasks(nulltasks.getTaskList());
         } catch(Exception e) {
             fail("exception caught while eriting file");
         }
@@ -46,7 +46,9 @@ public class StorageTest {
 
     @Test
     public void testStorageQuality() throws TaskManagerException, FileNotFoundException, IOException {
-        storage.write(tasks.getTaskList());
+        testsetup();
+
+        storage.writeTasks(tasks.getTaskList());
 
         TaskList checkers = new TaskList(storage.loadTasks());
 

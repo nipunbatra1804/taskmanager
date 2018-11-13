@@ -1,83 +1,93 @@
 package storage;
 
-import parser.DateTime;
+
+import org.json.simple.JSONArray;
 import tasks.*;
-import java.io.File;
+
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Scanner;
+
 import exceptions.TaskManagerException;
 
-import org.json.simple.JSONArray;
+import java.io.FileReader;
+import java.io.Reader;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class JSONStorage {
+public class JSONStorage extends Storage{
     public static final String DEADLINE = TaskType.DEADLINE.name();
     public static final String TODO = TaskType.TODO.name();
-    private static String _filename = "data.json";
+    private static String filename = "data.json";
+    private static JSONObject jsonstore;
     public JSONStorage(){
+        jsonstore = new JSONObject();
     }
 
     public JSONStorage(String filename){
-        _filename = filename;
+        JSONStorage.filename = filename;
+        jsonstore = new JSONObject();
     }
 
-    private static List<String> getLines(String filename) throws FileNotFoundException{
-        File f = new File(filename);
-        Scanner s = new Scanner(f);
-        List <String> linesFromFile = new ArrayList<>();
-        while(s.hasNext()){
-            linesFromFile.add(s.nextLine());
-        }
-        return linesFromFile;
+    private static JSONArray getJSONObjects(String filename) throws IOException,FileNotFoundException,ParseException{
+        JSONParser parser = new JSONParser();
+        Reader reader = new FileReader(filename);
+        JSONObject jsonObject = (JSONObject) parser.parse(reader);
+        JSONArray taskarray = (JSONArray)jsonObject.get("tasks");
+
+        return taskarray;
     }
 
-    public static List<Task> loadTasks() throws TaskManagerException,FileNotFoundException {
+    public List<Task> loadTasks() throws TaskManagerException,FileNotFoundException {
         List<Task> loadedTasks = new ArrayList<>();
         try {
-            List<String> lines = getLines(_filename);
-            for (String line : lines) {
-                if (line.trim().isEmpty()) { //ignore empty lines
-                    continue;
-                }
+            JSONArray taskarray = getJSONObjects(filename);
+            for (Object obj : taskarray) {
                 try {
-                    loadedTasks.add(createTask(line)); //convert the line to a task and add to the list
+                    loadedTasks.add(parseTask((JSONObject)obj)); //convert the line to a task and add to the list
                 } catch (TaskManagerException e){
                     throw e;
                 }
             }
         } catch (FileNotFoundException e) {
             throw new TaskManagerException("problem encountered while loading data: " + e.getMessage());
+        } catch (IOException e){
+            throw new TaskManagerException("Unable to open/close file: " + e.getMessage());
+        } catch (ParseException e){
+            throw new TaskManagerException("Invlaid format of JSOM" + e.getMessage());
         }
         return loadedTasks;
     }
 
-    private static Task createTask(String line) throws TaskManagerException {
-        String[] filedetails = line.split("\\|");
-        String command = filedetails[0].trim();
+    private static Task parseTask(JSONObject taskobject) throws TaskManagerException {
         TaskType type;
+        String by,to,from,status,priority;
         try {
-            type = TaskType.valueOf(command);
-            String by = filedetails.length > 3 ? filedetails[3].trim() : null;
-            return TaskFactory.getTask(type, filedetails[2].trim(), TaskStatus.valueOf(filedetails[1].trim()), by);
+            type = TaskType.valueOf((String)taskobject.get("type"));
+            by = (String)taskobject.get("deadline");
+            to = by==null?(String)taskobject.get("to"):by;
+            from = (String)taskobject.get("from");
+            priority = (String)taskobject.get("priority");
+            return TaskFactory.getTask(type,(String) taskobject.get("description"),
+                        TaskStatus.valueOf((String)taskobject.get("status")),from,to,TaskPriority.valueOf(priority));
         }
         catch (Exception e) {
             throw new TaskManagerException("Invalid Format in Storage");
         }
     }
 
-    public static void write(List<Task> tasks) throws IOException{
-        FileWriter fw = new FileWriter(_filename);
+    public void writeTasks(List<Task> tasks) throws IOException{
+        FileWriter fw = new FileWriter(filename);
+        JSONArray taskarray = new JSONArray();
         for (int i = 0; i < tasks.size(); i++) {
-            fw.write(tasks.get(i).toFileString());
-            fw.write("\n");
+            taskarray.add(tasks.get(i).getJson());
         }
+        jsonstore.put("tasks",taskarray);
+        fw.write(jsonstore.toJSONString());
         fw.close();
     }
 

@@ -1,12 +1,16 @@
 package tasklist;
 
-import tasks.Task;
-import tasks.TaskStatus;
+import exceptions.InvalidCommandParameterException;
+import parser.DateTime;
+import tasks.*;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.lang.NumberFormatException;
 import java.util.stream.Collectors;
+import java.lang.IndexOutOfBoundsException;
 
 public class TaskList {
 
@@ -50,7 +54,7 @@ public class TaskList {
      * @param index : index of task in tasklist to be marked as complete
      * @throws NumberFormatException
      */
-    public void markAsDone(int index) throws NumberFormatException{
+    public void markAsDone(int index) throws NumberFormatException, IndexOutOfBoundsException{
         _tasks.get(index-1).setStatus(TaskStatus.COMPLETED);
     }
 
@@ -112,6 +116,31 @@ public class TaskList {
      */
     public List<Task> getIncomplete(){
         return _tasks.stream().filter(s -> !s.isCompleted()).collect(Collectors.toList());
+    }
+
+
+    public List<Task> getPriority(String priority) throws InvalidCommandParameterException {
+        TaskPriority taskPriority ;
+        try {
+            taskPriority = TaskPriority.valueOf(priority.toUpperCase());
+        }catch (IllegalArgumentException e){
+            throw new InvalidCommandParameterException("Invalid Priority Parameter");
+        }
+        return _tasks.stream().filter(s -> s.getPriority()==taskPriority).collect(Collectors.toList());
+    }
+
+    public List<Task> getDueToday() {
+        Date today = DateTime.getToday();
+        List<Task> datedtasks = _tasks.stream().filter(s ->  s instanceof Timed || s instanceof Deadline).collect(Collectors.toList());
+        return datedtasks.stream().filter(s -> DateTime.compareDates(today,s.getDueDate())==0).collect(Collectors.toList());
+    }
+
+    public void changePriority(int index, TaskPriority priority) throws IndexOutOfBoundsException{
+        _tasks.get(index-1).setPriority(priority);
+    }
+
+    public void changeDate(int index, Calendar due) throws IndexOutOfBoundsException{
+        _tasks.get(index-1).setDueDate(due);
     }
 
 

@@ -3,6 +3,9 @@ package ui;
 import java.util.Scanner;
 
 public class Ui {
+    public static final String ANSI_RESET = "\033[0m";//"\u001B[0m";
+    public static final String ANSI_RED = "\033[0;31m"; //"\u001B[31m";
+
     private static Scanner _in = new Scanner(System.in);
     public Ui(){
     }
@@ -34,6 +37,10 @@ public class Ui {
      */
     public static void showToUser(String show){
         System.out.println(show);
+    }
+
+    public static void promptUser(String show){
+        System.out.println(ANSI_RED + show + ANSI_RESET);
     }
 
 

@@ -1,5 +1,11 @@
 package tasks;
 
+import org.json.simple.JSONObject;
+import parser.DateTime;
+
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * Abstract class for Todo and Deadline Classes
  */
@@ -13,6 +19,17 @@ public abstract class Task {
     /** task type keeps information about which type of object is being created with this abstract class
      */
     protected TaskType type;
+
+
+    public TaskPriority getPriority() {
+        return priority;
+    }
+
+    public void setPriority(TaskPriority priority) {
+        this.priority = priority;
+    }
+
+    protected TaskPriority priority = TaskPriority.NONE;
 
     /**
      *
@@ -55,5 +72,11 @@ public abstract class Task {
      * @return
      */
     public abstract String toFileString();
-
+    public abstract JSONObject getJson();
+    public Date getDueDate(){
+        return null;
+    }
+    public void setDueDate(Calendar due){
+        //Dd Nothing
+    }
 }

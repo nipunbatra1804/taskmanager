@@ -1,6 +1,8 @@
 package tasks;
 
 
+import org.json.simple.JSONObject;
+
 public class Todo extends Task {
     /**
      * Default Constructor for Todo class
@@ -44,6 +46,17 @@ public class Todo extends Task {
      * @return file string for storing tasks to file
      */
     public String toFileString(){
-        return type.name() + " | " + status.name() + " | " + this.description;
+        return type.name() + " | " + status.name() + " | " + priority.name() + " | "+ this.description;
+    }
+
+    @Override
+    public JSONObject getJson() {
+        JSONObject jobj = new JSONObject();
+        jobj.put("type",type.name());
+        jobj.put("description",description);
+        jobj.put("status",status.name());
+        jobj.put("priority",priority.name());
+
+        return jobj;
     }
 }
