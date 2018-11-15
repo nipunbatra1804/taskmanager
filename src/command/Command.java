@@ -31,6 +31,7 @@ public class Command {
 
     private static final String PRIORITY = "priority";
     private static final String DUE_TODAY= "today";
+    private static final String DESCRIPTION = "description";
     /**
      * Instance variables/objects
      */
@@ -72,6 +73,12 @@ public class Command {
                 String datestr = Parser.getEndCommandParameter(Integer.toString(taskId),description);
                 tasks.changeDate(taskId,Parser.createDate(datestr));
                 break;
+            case DESCRIPTION:
+                taskId = Parser.getChangeTaskIndex(Parser.getCommandParameter(command,description));
+                String taskDesc = Parser.getEndCommandParameter(Integer.toString(taskId),description);
+                tasks.changeDesc(taskId,taskDesc);
+                break;
+
             default:return new Feedback("Unknown change command parameter");
 
         }

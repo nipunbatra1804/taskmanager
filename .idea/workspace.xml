@@ -2,52 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b104c930-de7a-4954-bb93-8fab90997948" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_joestelmach_natty_0_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_slf4j_slf4j_nop_1_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/command/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/command/Feedback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptions/InvalidCommandFormatException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptions/InvalidCommandParameterException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/NaturalLanguageParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tasks/Timed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/JSONStorageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagerFinal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TaskManagerFinal.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newStorageFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/newStorageFile.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaskManagerFinal/TaskManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaskManagerFinal/TaskManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaskManagerFinal/parser/DateTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaskManagerFinal/parser/DateTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaskManagerFinal/parser/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaskManagerFinal/parser/Parser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TaskManagerFinal/storage/JSONStorage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaskManagerFinal/storage/JSONStorage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TaskManagerFinal/tasklist/TaskList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaskManagerFinal/tasklist/TaskList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaskManagerFinal/tasks/Deadline.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaskManagerFinal/tasks/Deadline.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TaskManagerFinal/tasks/Priority.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TaskManagerFinal/tasks/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaskManagerFinal/tasks/Task.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaskManagerFinal/tasks/TaskFactory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaskManagerFinal/tasks/TaskFactory$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaskManagerFinal/tasks/TaskFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaskManagerFinal/tasks/TaskFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaskManagerFinal/tasks/TaskType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaskManagerFinal/tasks/TaskType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaskManagerFinal/tasks/Todo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaskManagerFinal/tasks/Todo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaskManagerFinal/ui/Ui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaskManagerFinal/ui/Ui.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/TaskManagerFinal/DateTimeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/TaskManagerFinal/DateTimeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/TaskManagerFinal/ParserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/TaskManagerFinal/ParserTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/TaskManagerFinal/StorageTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/TaskManagerFinal/TaskFactoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/TaskManagerFinal/TaskFactoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/DateTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/DateTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/storage/JSONStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/storage/JSONStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/storage/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/storage/Storage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tasklist/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasklist/TaskList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasks/Deadline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/Deadline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasks/Priority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/TaskPriority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tasks/Priority.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tasks/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasks/TaskFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/TaskFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasks/TaskType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/TaskType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasks/Todo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/Todo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Ui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Ui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/DateTimeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DateTimeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/StorageTest.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,7 +46,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="6" />
-          <entry key="java" value="303" />
+          <entry key="java" value="307" />
           <entry key="json" value="14" />
           <entry key="txt" value="15" />
         </counts>
@@ -89,7 +54,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="6" />
-          <entry key="JAVA" value="303" />
+          <entry key="JAVA" value="307" />
           <entry key="JSON" value="14" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
@@ -97,14 +62,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="java" value="21573" />
+          <entry key="java" value="21848" />
           <entry key="json" value="2" />
           <entry key="txt" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="21573" />
+          <entry key="JAVA" value="21848" />
           <entry key="JSON" value="2" />
           <entry key="PLAIN_TEXT" value="67" />
         </counts>
@@ -116,7 +81,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TaskManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
+            <state relative-caret-position="1024">
               <caret line="102" column="13" lean-forward="true" selection-start-line="102" selection-start-column="13" selection-end-line="102" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -128,8 +93,33 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="104" column="93" selection-start-line="104" selection-start-column="93" selection-end-line="104" selection-end-column="93" />
+            <state relative-caret-position="1429">
+              <caret line="171" lean-forward="true" selection-start-line="171" selection-end-line="171" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tasks/Todo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+              <folding>
+                <element signature="e#231#232#0" expanded="true" />
+                <element signature="e#281#282#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tasks/Timed.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -140,46 +130,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/JSONStorageTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+            <state relative-caret-position="-45">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/tasklist/TaskList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="133" column="125" selection-start-line="133" selection-start-column="125" selection-end-line="133" selection-end-column="125" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/storage/JSONStorage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="65" column="28" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+            <state relative-caret-position="-749">
+              <caret line="27" column="53" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/storage/Storage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="95" column="23" lean-forward="true" selection-start-line="95" selection-start-column="23" selection-end-line="95" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/newjson.json">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/command/Command.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="80" column="6" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="6" />
+            <state relative-caret-position="448">
+              <caret line="78" column="25" lean-forward="true" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -188,10 +173,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tasks/TaskPriority.java">
+        <entry file="file://$PROJECT_DIR$/src/tasks/TaskFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="14" selection-start-column="14" selection-end-column="14" />
+            <state relative-caret-position="293">
+              <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -199,23 +187,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tasks/Task.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="-6">
+              <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#395#396#0" expanded="true" />
+                <element signature="e#422#423#0" expanded="true" />
                 <element signature="e#631#632#0" expanded="true" />
+                <element signature="e#671#672#0" expanded="true" />
+                <element signature="e#1417#1418#0" expanded="true" />
+                <element signature="e#1445#1446#0" expanded="true" />
                 <element signature="e#1424#1425#0" expanded="true" />
                 <element signature="e#1480#1481#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/exceptions/InvalidCommandFormatException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="38" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -272,29 +256,30 @@
         <option value="$PROJECT_DIR$/src/tasks/Todo.java" />
         <option value="$PROJECT_DIR$/src/tasks/Deadline.java" />
         <option value="$PROJECT_DIR$/src/tasks/Timed.java" />
-        <option value="$PROJECT_DIR$/src/tasks/Task.java" />
         <option value="$PROJECT_DIR$/src/parser/NaturalLanguageParser.java" />
         <option value="$PROJECT_DIR$/tests/ParserTest.java" />
         <option value="$PROJECT_DIR$/src/command/Feedback.java" />
         <option value="$PROJECT_DIR$/tests/DateTimeTest.java" />
         <option value="$PROJECT_DIR$/src/ui/Ui.java" />
-        <option value="$PROJECT_DIR$/src/storage/JSONStorage.java" />
         <option value="$PROJECT_DIR$/src/exceptions/InvalidCommandFormatException.java" />
         <option value="$PROJECT_DIR$/src/exceptions/InvalidCommandParameterException.java" />
         <option value="$PROJECT_DIR$/src/tasks/TaskType.java" />
-        <option value="$PROJECT_DIR$/src/tasklist/TaskList.java" />
         <option value="$PROJECT_DIR$/src/parser/DateTime.java" />
         <option value="$PROJECT_DIR$/src/tasks/TaskPriority.java" />
-        <option value="$PROJECT_DIR$/src/command/Command.java" />
         <option value="$PROJECT_DIR$/src/parser/Parser.java" />
         <option value="$PROJECT_DIR$/src/storage/Storage.java" />
         <option value="$PROJECT_DIR$/src/TaskManager.java" />
         <option value="$PROJECT_DIR$/tests/JSONStorageTest.java" />
+        <option value="$PROJECT_DIR$/src/storage/JSONStorage.java" />
+        <option value="$PROJECT_DIR$/src/command/Command.java" />
+        <option value="$PROJECT_DIR$/src/tasks/Task.java" />
+        <option value="$PROJECT_DIR$/src/tasklist/TaskList.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
+    <option name="x" value="1" />
+    <option name="y" value="123" />
     <option name="width" value="1280" />
     <option name="height" value="709" />
   </component>
@@ -314,6 +299,28 @@
             </path>
             <path>
               <item name="TaskManagerFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaskManagerFinal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TaskManagerFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaskManagerFinal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tasklist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TaskManagerFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaskManagerFinal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TaskManagerFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaskManagerFinal" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TaskManagerFinal" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -329,7 +336,7 @@
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/nipunbatra/IdeaProjects/TaskManagerFinal/src/parser/DateTime.java" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542104904865" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542253158560" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -367,7 +374,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ParserTest">
+  <component name="RunManager" selected="JUnit.All in TaskManagerFinal">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="10" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -443,9 +450,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in TaskManagerFinal" />
         <item itemvalue="JUnit.ParserTest" />
         <item itemvalue="JUnit.JSONStorageTest" />
-        <item itemvalue="JUnit.All in TaskManagerFinal" />
         <item itemvalue="JUnit.JSONStorageTest.testStorageQuality" />
         <item itemvalue="JUnit.tasks in TaskManagerFinal" />
       </list>
@@ -465,12 +472,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="JSONStorageTest_testStorageQuality - 2018.11.13 at 02h 00m 22s.xml">
-      <configuration name="JSONStorageTest.testStorageQuality" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_TaskManagerFinal - 2018.11.13 at 02h 00m 29s.xml">
-      <configuration name="All in TaskManagerFinal" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_TaskManagerFinal - 2018.11.13 at 02h 01m 01s.xml">
       <configuration name="All in TaskManagerFinal" configurationId="JUnit" />
     </history-entry>
@@ -495,6 +496,12 @@
     <history-entry file="ParserTest - 2018.11.13 at 13h 13m 30s.xml">
       <configuration name="ParserTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="JSONStorageTest - 2018.11.13 at 18h 38m 23s.xml">
+      <configuration name="JSONStorageTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_TaskManagerFinal - 2018.11.13 at 18h 58m 08s.xml">
+      <configuration name="All in TaskManagerFinal" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -509,7 +516,7 @@
     <frame x="1" y="23" width="1280" height="709" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2197092" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2197092" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -518,7 +525,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3273906" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49935815" visible="true" weight="0.31442463" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49935815" visible="true" weight="0.10696921" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39708266" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -537,6 +544,35 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2197092" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3273906" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49935815" visible="true" weight="0.31442463" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39708266" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32903227" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32642487" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5006418" side_tool="true" weight="0.33375797" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49935815" weight="0.32903227" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3241491" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.32960597" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -572,13 +608,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/command/Command.java</url>
-          <line>39</line>
+          <line>40</line>
           <properties />
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/command/Command.java</url>
-          <line>65</line>
+          <line>66</line>
           <properties />
           <option name="timeStamp" value="40" />
         </line-breakpoint>
@@ -754,26 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tasks/Timed.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tasks/TaskFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/ParserTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
@@ -856,17 +872,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/StorageTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/tasks/Todo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#231#232#0" expanded="true" />
-            <element signature="e#281#282#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/exceptions/TaskManagerException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -912,13 +917,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tasklist/TaskList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1905">
-          <caret line="139" selection-start-line="139" selection-end-line="139" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/command/Feedback.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -950,33 +948,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tasks/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#631#632#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-            <element signature="e#1480#1481#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/exceptions/InvalidCommandFormatException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="38" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="80" column="6" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -995,25 +970,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TaskManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
+        <state relative-caret-position="1024">
           <caret line="102" column="13" lean-forward="true" selection-start-line="102" selection-start-column="13" selection-end-line="102" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/JSONStorageTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="104" column="93" selection-start-line="104" selection-start-column="93" selection-end-line="104" selection-end-column="93" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1022,11 +980,97 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/storage/JSONStorage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="65" column="28" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+        <state relative-caret-position="-749">
+          <caret line="27" column="53" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tasks/Timed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tasks/Todo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#231#232#0" expanded="true" />
+            <element signature="e#281#282#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1429">
+          <caret line="171" lean-forward="true" selection-start-line="171" selection-end-line="171" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/JSONStorageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="78" column="25" lean-forward="true" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tasks/TaskFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tasks/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#395#396#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#1417#1418#0" expanded="true" />
+            <element signature="e#1445#1446#0" expanded="true" />
+            <element signature="e#1424#1425#0" expanded="true" />
+            <element signature="e#1480#1481#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tasklist/TaskList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="133" column="125" selection-start-line="133" selection-start-column="125" selection-end-line="133" selection-end-column="125" />
         </state>
       </provider>
     </entry>

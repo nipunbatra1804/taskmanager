@@ -20,9 +20,12 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class JSONStorage extends Storage{
+
+    private static final String DEAFULT_FILENAME  = "data.json";
+
     public static final String DEADLINE = TaskType.DEADLINE.name();
     public static final String TODO = TaskType.TODO.name();
-    private static String filename = "data.json";
+    private static String filename = DEAFULT_FILENAME;
     private static JSONObject jsonstore;
     public JSONStorage(){
         jsonstore = new JSONObject();

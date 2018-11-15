@@ -131,7 +131,7 @@ public class TaskList {
 
     public List<Task> getDueToday() {
         Date today = DateTime.getToday();
-        List<Task> datedtasks = _tasks.stream().filter(s ->  s instanceof Timed || s instanceof Deadline).collect(Collectors.toList());
+        List<Task> datedtasks = _tasks.stream().filter(s -> s.getType() == TaskType.DEADLINE  || s.getType()== TaskType.TIMED).collect(Collectors.toList());
         return datedtasks.stream().filter(s -> DateTime.compareDates(today,s.getDueDate())==0).collect(Collectors.toList());
     }
 
@@ -144,5 +144,7 @@ public class TaskList {
     }
 
 
-
+    public void changeDesc(int index, String taskDesc) throws IndexOutOfBoundsException {
+        _tasks.get(index-1).setDescription(taskDesc);
+    }
 }

@@ -16,6 +16,11 @@ public abstract class Task {
     /** task status viz Open, completed etc
      */
     protected TaskStatus status;
+
+    public TaskType getType() {
+        return type;
+    }
+
     /** task type keeps information about which type of object is being created with this abstract class
      */
     protected TaskType type;
@@ -61,6 +66,9 @@ public abstract class Task {
     public String getDescription() {
         return description;
     }
+    public void setDescription(String description) {
+         this.description = description;
+    }
     @Override
     public String toString(){
         return "description: "+ this.description;
@@ -79,4 +87,6 @@ public abstract class Task {
     public void setDueDate(Calendar due){
         //Dd Nothing
     }
+
+
 }
