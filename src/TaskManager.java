@@ -2,12 +2,11 @@ import command.Command;
 import command.Feedback;
 import exceptions.InvalidCommandFormatException;
 import exceptions.TaskManagerException;
-import parser.Parser;
+import parser.Interpreter;
 import storage.JSONStorage;
 import storage.Storage;
 import tasklist.TaskList;
 import tasks.Task;
-import tasks.TaskPriority;
 import ui.Ui;
 
 import java.io.FileNotFoundException;
@@ -22,9 +21,9 @@ import java.util.List;
 public class TaskManager {
 
 
-    static TaskList tasks;
-    static Ui ui;
-    static Storage storage;
+    private static TaskList tasks;
+    private static Ui ui;
+    private static Storage storage;
 
 
 
@@ -40,7 +39,7 @@ public class TaskManager {
     /**
      * Default Constructor to read from default file
      */
-    public TaskManager() {
+    private TaskManager() {
         storage = new JSONStorage();
         setup();
     }
@@ -53,9 +52,6 @@ public class TaskManager {
         try {
             List<Task> tasklist = storage.loadTasks();
             tasks = new TaskList(tasklist);
-        } catch (FileNotFoundException e) {
-            ui.showToUser("Problem reading file. Starting with an empty task list");
-            tasks = new TaskList();
         } catch (TaskManagerException e){
             ui.printError(e.getMessage());
             tasks = new TaskList();
@@ -73,26 +69,26 @@ public class TaskManager {
             ui.promptUser("Enter Command");
             try {
                 String userCommand = ui.getInput().trim();
-                String command = Parser.getCommandWord(userCommand);//extract the first word of the user input
+                String command = Interpreter.getCommandWord(userCommand);//extract the first word of the user input
                 feedback = Command.executeCommand(tasks,isExit, command, userCommand);
+                String message = feedback.getMessage();
+                if (message != null){
+                    ui.showToUser(message);
+                }
             } catch (InvalidCommandFormatException ex) {
-                ui.printError("Invalid Command Format entered");
+                ui.printError("Invalid Command Format entered : " + ex.getMessage());
             } catch (TaskManagerException e){
                 ui.printError(e.getMessage());
             } catch (NumberFormatException e){
-                ui.printError(e.getMessage() + "Incorrect Command, Expected number");
+                ui.printError("Incorrect Command, Expected number");
             }
             isExit = feedback.isExit();
-            String message = feedback.getMessage();
-            if (message != null){
-                ui.showToUser(message);
-            }
         }
         exit();
     }
 
     public static void main(String[] args) {
-        TaskManager tm = new TaskManager();
+        TaskManager tm = new TaskManager("newdata.json");
         tm.runInterface();
     }
 

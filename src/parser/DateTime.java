@@ -48,21 +48,34 @@ public class DateTime {
         return sdf.format(date.getTime());
     }
 
+    /**
+     * return String of format SDF from input date D
+     * @param d
+     * @return  date string
+     */
     public static String sdftoDate(Date d){
         SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
         return sdf.format(d);
     }
-    //Convert Date to Calendar
     private static Calendar dateToCalendar(Date date) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         return calendar;
     }
 
+    /**
+     * returns the current date
+     */
     public static Date getToday() {
         return Calendar.getInstance().getTime();
     }
 
+    /**
+     * Compares two dates to return sooner, later
+     * @param date1 input param date
+     * @param date2 input param date
+     * @return 0 if equal, -1 id date1 < date 2, date2 < date 1,
+     */
     public static int compareDates(Date date1, Date date2) {
         Date sDate = getZeroTimeDate(date1);
         Date eDate = getZeroTimeDate(date2);

@@ -3,21 +3,9 @@ import exceptions.InvalidDateException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
 import parser.DateTime;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.text.ParseException;
-import java.util.Calendar;
 
-import exceptions.TaskManagerException;
-import org.junit.Test;
-import parser.DateTime;
-import parser.Parser;
-import tasks.Deadline;
-import tasks.Task;
-import tasks.Todo;
+import java.util.Calendar;
 
 
 public class DateTimeTest {

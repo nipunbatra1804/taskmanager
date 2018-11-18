@@ -19,23 +19,44 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class JSONStorage extends Storage{
+public class JSONStorage implements Storage{
 
-    private static final String DEAFULT_FILENAME  = "data.json";
+    private final String DEAFULT_FILENAME  = "data.json";
 
-    public static final String DEADLINE = TaskType.DEADLINE.name();
-    public static final String TODO = TaskType.TODO.name();
-    private static String filename = DEAFULT_FILENAME;
-    private static JSONObject jsonstore;
+    /**
+     * filename containing the address of the JSON object
+     */
+    private String filename = DEAFULT_FILENAME;
+
+    /**
+     * JSONObject attribute used for parsing and constructiong json strings.
+     */
+    private JSONObject jsonstore;
+
+    /**
+     * Constructor to read/write from default flile
+     */
     public JSONStorage(){
         jsonstore = new JSONObject();
     }
 
+    /**
+     * Constructor to specify new filename to read and write from.
+     * @param filename:filename
+     */
     public JSONStorage(String filename){
-        JSONStorage.filename = filename;
+        this.filename = filename;
         jsonstore = new JSONObject();
     }
 
+    /**
+     * gets a list of  Json objects of type JSONArray.
+     * @param filename file name of json file
+     * @return
+     * @throws IOException in case file is not readable
+     * @throws FileNotFoundException in case file doesnt exist
+     * @throws ParseException in case json file's structure is corrupted
+     */
     private static JSONArray getJSONObjects(String filename) throws IOException,FileNotFoundException,ParseException{
         JSONParser parser = new JSONParser();
         Reader reader = new FileReader(filename);
@@ -45,7 +66,12 @@ public class JSONStorage extends Storage{
         return taskarray;
     }
 
-    public List<Task> loadTasks() throws TaskManagerException,FileNotFoundException {
+    /**
+     * returns a list of tasks that were read from the specified json file
+     * @return list of tsks in storage
+     * @throws TaskManagerException in case loading of tasks fails.
+     */
+    public List<Task> loadTasks() throws TaskManagerException {
         List<Task> loadedTasks = new ArrayList<>();
         try {
             JSONArray taskarray = getJSONObjects(filename);
@@ -66,6 +92,12 @@ public class JSONStorage extends Storage{
         return loadedTasks;
     }
 
+    /**
+     * parses a json object to return a Task object
+     * @param taskobject JSON object extracted from file storage
+     * @return Task object
+     * @throws TaskManagerException if Task in storage of invalid format
+     */
     private static Task parseTask(JSONObject taskobject) throws TaskManagerException {
         TaskType type;
         String by,to,from,status,priority;
@@ -75,19 +107,26 @@ public class JSONStorage extends Storage{
             to = by==null?(String)taskobject.get("to"):by;
             from = (String)taskobject.get("from");
             priority = (String)taskobject.get("priority");
+            status = (String)taskobject.get("status");
             return TaskFactory.getTask(type,(String) taskobject.get("description"),
-                        TaskStatus.valueOf((String)taskobject.get("status")),from,to,TaskPriority.valueOf(priority));
+                        TaskStatus.valueOf(status),from,to,TaskPriority.valueOf(priority));
         }
         catch (Exception e) {
             throw new TaskManagerException("Invalid Format in Storage");
         }
     }
 
+    /**
+     * Write Tasks descriptions to storage file
+     * @param tasks List of Task objects to write to file
+     * @throws IOException : if unable to write file.
+     */
+    @SuppressWarnings("unchecked")
     public void writeTasks(List<Task> tasks) throws IOException{
         FileWriter fw = new FileWriter(filename);
         JSONArray taskarray = new JSONArray();
-        for (int i = 0; i < tasks.size(); i++) {
-            taskarray.add(tasks.get(i).getJson());
+        for (Task task : tasks) {
+            taskarray.add(task.getJson());
         }
         jsonstore.put("tasks",taskarray);
         fw.write(jsonstore.toJSONString());

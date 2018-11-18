@@ -1,7 +1,6 @@
 package tasks;
 
 import org.json.simple.JSONObject;
-import parser.DateTime;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -37,8 +36,8 @@ public abstract class Task {
     protected TaskPriority priority = TaskPriority.NONE;
 
     /**
-     *
-     * @param description
+     * Constructor for Task with status set as OPEN
+     * @param description description of task
      */
     public Task(String description) {
         this.description = description;
@@ -47,8 +46,8 @@ public abstract class Task {
 
     /**
      * Constructor for Task with status specified
-      * @param description
-     * @param status
+      * @param description description of task
+     * @param status status to set task to
      */
     public Task(String description, TaskStatus status){
         this.description = description;
@@ -57,33 +56,55 @@ public abstract class Task {
 
     /**
      * Set the status of a particular task
-     * @param status
+     * @param status to set attribute this.status
      */
     public void setStatus(TaskStatus status) {
         this.status = status;
     }
-
+    /**
+     * return task description as a string
+     */
     public String getDescription() {
         return description;
     }
+
+    /**
+     * setter for task description.
+     * @param description string to set task description to.
+     */
     public void setDescription(String description) {
          this.description = description;
     }
     @Override
     public String toString(){
-        return "description: "+ this.description;
+        return "description: "+ this.description + " of " + priority.toString() + " priority";
     }
     public abstract boolean isCompleted();
 
     /**
      * return filestring for writing to storage
-     * @return
+     * @return string that would be written to a file.
      */
     public abstract String toFileString();
+
+    /**
+     * return JSON object for task attributes
+     * @return JSON object
+     */
     public abstract JSONObject getJson();
+
+    /**
+     * get due date for a task
+     * @return : Date deadline/end
+     */
     public Date getDueDate(){
         return null;
     }
+
+    /**
+     * set due date for a tas
+     * @param due : Calendar deadline/end
+     */
     public void setDueDate(Calendar due){
         //Dd Nothing
     }

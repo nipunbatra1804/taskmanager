@@ -5,6 +5,9 @@ import parser.DateTime;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * Sublass to encapsulate Deadline task
+ */
 public class Deadline extends Todo {
 
     /**
@@ -50,23 +53,38 @@ public class Deadline extends Todo {
         return deadline;
     }
 
+    /**
+     * return task description as a string
+     */
     @Override
     public String toString(){
         String s = super.toString();
         return (s + "\ndo by: " + DateTime.calendarToString(this.getDeadline()));
     }
-
+    /**
+     * @return file string for storing tasks to file
+     */
+    @Override
     public String toFileString(){
         return type.name() + " | " + status.name() + " | " + this.description +
                 " | " + DateTime.calendarToString(this.getDeadline());
     }
 
+    /**
+     * return due date or deadline
+     * @return deadline
+     */
     @Override
     public Date getDueDate(){
         return deadline.getTime();
     }
 
+    /**
+     * create a new json object with the attributes of the task.
+     * @return JSONObject to return to calling function
+     */
     @Override
+    @SuppressWarnings("unchecked")
     public JSONObject getJson() {
         JSONObject jobj = new JSONObject();
         jobj.put("type",type.name());
@@ -77,6 +95,10 @@ public class Deadline extends Todo {
         return jobj;
     }
 
+    /**
+     * set due date for a task
+     * @param due deadline
+     */
     @Override
     public void setDueDate(Calendar due){
         deadline = due;

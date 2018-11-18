@@ -17,7 +17,7 @@ public class TaskList {
     /**
      * Instace variable that stores all tasks during runtime
      */
-    private List<Task> _tasks;
+    private List<Task> tasks;
     /**
      * Instance variable that counts the number of tasks at run time
      */
@@ -27,7 +27,7 @@ public class TaskList {
      * Constructor to create an Empty Task List
      */
     public TaskList(){
-        _tasks = new ArrayList<Task>();
+        tasks = new ArrayList<Task>();
         count = 0;
     }
 
@@ -36,7 +36,7 @@ public class TaskList {
      * @param tasks list of tasks(usually read from storage)
      */
     public TaskList(List<Task> tasks){
-        _tasks = tasks;
+        this.tasks = tasks;
         count = tasks.size();
     }
 
@@ -45,7 +45,7 @@ public class TaskList {
      * @param t: task to be added
      */
     public void addTask(Task t){
-        _tasks.add(t);
+        tasks.add(t);
         count++;
     }
 
@@ -55,7 +55,7 @@ public class TaskList {
      * @throws NumberFormatException
      */
     public void markAsDone(int index) throws NumberFormatException, IndexOutOfBoundsException{
-        _tasks.get(index-1).setStatus(TaskStatus.COMPLETED);
+        tasks.get(index-1).setStatus(TaskStatus.COMPLETED);
     }
 
     /**
@@ -65,7 +65,7 @@ public class TaskList {
      * @throws IndexOutOfBoundsException
      */
     public void deleteTask(int index) throws NumberFormatException, IndexOutOfBoundsException {
-        _tasks.remove(index-1);
+        tasks.remove(index-1);
         count--;
     }
 
@@ -73,27 +73,29 @@ public class TaskList {
      * print all tasks in tasklist
      */
     public void printTasks(){
-        for (int i = 0; i <_tasks.size(); i++) {
-            System.out.println("[" + (i + 1) + "] " + _tasks.get(i));
-        }
-    }
-
-    /**
-     * Print tasks from a List of Task objects
-     * @param tasks
-     */
-    public void printTasks(List<Task> tasks){
-        for (int i = 0; i <tasks.size(); i++) {
+        for (int i = 0; i < tasks.size(); i++) {
             System.out.println("[" + (i + 1) + "] " + tasks.get(i));
         }
     }
 
     /**
-     * getter for _tasks variable
+     * Print tasks from a List of Task objects
+     * @param listTasks list of tasks to print out.
+     */
+    public String printTasks(List<Task> listTasks){
+        String listOfTasks = "";
+        for (int i = 0; i <listTasks.size(); i++) {
+            listOfTasks = listOfTasks + "[" + (i + 1) + "] " + listTasks.get(i).toFileString();
+        }
+        return listOfTasks;
+    }
+
+    /**
+     * getter for tasks variable
      * @return List of Task objetcs
      */
     public List<Task> getTaskList(){
-        return _tasks;
+        return tasks;
     }
 
     /**
@@ -102,7 +104,7 @@ public class TaskList {
      */
     public List<Task> getCompleted(){
         List<Task> completed = new ArrayList<>();
-        for(Task t : _tasks){
+        for(Task t : tasks){
             if (t.isCompleted()){
                 completed.add(t);
             }
@@ -115,10 +117,16 @@ public class TaskList {
      * @return list of Task objects
      */
     public List<Task> getIncomplete(){
-        return _tasks.stream().filter(s -> !s.isCompleted()).collect(Collectors.toList());
+        return tasks.stream().filter(s -> !s.isCompleted()).collect(Collectors.toList());
     }
 
 
+    /**
+     * returns a list of tasks of a particular priority
+     * @param priority: desired priority
+     * @return List<Task> object of priority
+     * @throws InvalidCommandParameterException if an invalid priority is passed as an argument
+     */
     public List<Task> getPriority(String priority) throws InvalidCommandParameterException {
         TaskPriority taskPriority ;
         try {
@@ -126,25 +134,46 @@ public class TaskList {
         }catch (IllegalArgumentException e){
             throw new InvalidCommandParameterException("Invalid Priority Parameter");
         }
-        return _tasks.stream().filter(s -> s.getPriority()==taskPriority).collect(Collectors.toList());
+        return tasks.stream().filter(s -> s.getPriority()==taskPriority).collect(Collectors.toList());
     }
 
+    /**
+     * returns a list of tasks that are due today
+     * @return list of tasks due today
+     */
     public List<Task> getDueToday() {
         Date today = DateTime.getToday();
-        List<Task> datedtasks = _tasks.stream().filter(s -> s.getType() == TaskType.DEADLINE  || s.getType()== TaskType.TIMED).collect(Collectors.toList());
+        List<Task> datedtasks = tasks.stream().filter(s -> s.getType() == TaskType.DEADLINE  || s.getType()== TaskType.TIMED).collect(Collectors.toList());
         return datedtasks.stream().filter(s -> DateTime.compareDates(today,s.getDueDate())==0).collect(Collectors.toList());
     }
 
+    /** change priotrity of a task
+     *
+     * @param index of task to be modified
+     * @param priority of task to be modified to
+     * @throws IndexOutOfBoundsException thrown if an invalid task index is given
+     */
     public void changePriority(int index, TaskPriority priority) throws IndexOutOfBoundsException{
-        _tasks.get(index-1).setPriority(priority);
+        tasks.get(index-1).setPriority(priority);
     }
 
+    /**
+     * change date of a task
+     * @param index of task to be modified
+     * @param due date of task be modified to
+     * @throws IndexOutOfBoundsException if task doesnt exist
+     */
     public void changeDate(int index, Calendar due) throws IndexOutOfBoundsException{
-        _tasks.get(index-1).setDueDate(due);
+        tasks.get(index-1).setDueDate(due);
     }
 
-
+    /**
+     * change description of a task.
+     * @param index of a task to be modified
+     * @param taskDesc new description
+     * @throws IndexOutOfBoundsException if task doesnt exist
+     */
     public void changeDesc(int index, String taskDesc) throws IndexOutOfBoundsException {
-        _tasks.get(index-1).setDescription(taskDesc);
+        tasks.get(index-1).setDescription(taskDesc);
     }
 }

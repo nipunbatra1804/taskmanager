@@ -3,6 +3,10 @@ package tasks;
 
 import org.json.simple.JSONObject;
 
+/**
+ * Class definition for Todo tasks
+ * todo tasks are similar to just basic reminders
+ */
 public class Todo extends Task {
     /**
      * Default Constructor for Todo class
@@ -33,6 +37,9 @@ public class Todo extends Task {
 
 
     @Override
+    /**
+     * return task description as a string
+     */
     public String toString(){
 
         if(TaskStatus.COMPLETED.equals(status)){
@@ -49,7 +56,12 @@ public class Todo extends Task {
         return type.name() + " | " + status.name() + " | " + priority.name() + " | "+ this.description;
     }
 
+    /**
+     * create a new json object with the attributes of the task.
+     * @return JSONObject to return to calling function
+     */
     @Override
+    @SuppressWarnings("unchecked")
     public JSONObject getJson() {
         JSONObject jobj = new JSONObject();
         jobj.put("type",type.name());
